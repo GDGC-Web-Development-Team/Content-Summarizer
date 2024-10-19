@@ -1,0 +1,55 @@
+.homepage {
+    background: radial-gradient(circle at center, #0d0d0d 60%, #3c025d 100%);
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    margin: 0 auto;
+    width: 90%;
+    max-width: 650px;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 30px;
+    z-index: 1000;
+    transition: width 0.3s ease;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    color: white;
+    font-size: 18px;
+    margin-left: 30px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-links li:hover {
+    color: #a567ff;
+}
