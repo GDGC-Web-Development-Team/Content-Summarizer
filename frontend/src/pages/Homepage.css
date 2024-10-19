@@ -1,0 +1,143 @@
+
+.homepage {
+  background: radial-gradient(circle at center, #0d0d0d 60%, #3c025d 100%);
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 25px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  margin: 0 auto;
+  width: 90%;
+  max-width: 650px; 
+  color: white;
+  text-decoration: none;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 30px; 
+  z-index: 1000;
+  transition: width 0.3s ease;
+}
+a{
+  color: white;
+  text-decoration: none;
+
+}
+.navbar-logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links li {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin-left: 30px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-links li:hover {
+  color: #a567ff;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 140px);
+  padding: 0 50px;
+  flex-wrap: wrap;
+  gap: 50px;
+  text-align: center;
+}
+
+.text-content {
+  max-width: 600px;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #a567ff;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin: 10px 0;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.start-button, .guide-button {
+  background-color: #a567ff;
+  color: rgb(10, 10, 10);
+  border: none;
+  padding: 10px 20px;
+  margin-right: 15px;
+  box-shadow:0px 4px 20px rgba(113, 32, 171, 0.166);
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background 0.3s ease;
+}
+
+.start-button:hover, .guide-button:hover {
+  background-color: #7f46c8;
+}
+
+.robot-image img {
+  opacity: 1;
+  width: 600px;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+}
+.logo h1,h2{
+  background: linear-gradient(270deg, rgb(255, 255, 255), rgb(135, 11, 201));
+  -webkit-background-clip: text; /* For Safari */
+  background-clip: text;
+  color: transparent;
+  text-align: center; /* Center the text */
+}
+.logo{
+  margin: -10px;
+}
+.dropdown {
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  list-style: none;
+  padding: 10px;
+  top: 50px; /* Adjust based on your navbar height */
+  right: 10px; /* Align to the right */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.dropdown li {
+  cursor: pointer;
+  padding: 5px 10px;
+  color: black;
+}
+
+.dropdown li:hover {
+  background-color: #f0f0f0;
+}

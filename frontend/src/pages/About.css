@@ -1,0 +1,159 @@
+.homepage {
+    background: radial-gradient(circle at center, #0d0d0d 60%, #3c025d 100%);
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    margin: 0 auto;
+    width: 90%;
+    max-width: 650px;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 30px;
+    z-index: 1000;
+    transition: width 0.3s ease;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    color: white;
+    font-size: 18px;
+    margin-left: 30px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-links li:hover {
+    color: #a567ff;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    margin: 40px 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.stepper-container {
+    width: 80%; /* Reduced width to allow more space for text */
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px auto; /* Auto margin to center the container */
+}
+
+.step-label {
+    font-size: 1.4rem;
+    color: white;
+}
+
+.step-description {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+.complete-button {
+    background-color: #a567ff;
+    color: #0a0a0a;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.complete-button:hover {
+    background-color: #7f46c8;
+}
+
+.dropdown {
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    list-style: none;
+    padding: 10px;
+    top: 50px;
+    right: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.dropdown li {
+    cursor: pointer;
+    padding: 5px 10px;
+    color: black;
+}
+
+.dropdown li:hover {
+    background-color: #f0f0f0;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    margin: 40px 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.stepper-container {
+    width: 80%; /* Updated width for more text visibility */
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px auto;
+    background-color: transparent; /* Removed background for transparent effect */
+    box-shadow: none; /* No shadow to keep the transparent effect */
+}
+
+.step-label {
+    font-size: 1.4rem;
+    color: white;
+}
+
+.step-description {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    line-height: 1.5;
+}

@@ -1,0 +1,158 @@
+/* Main container styling for the register page */
+.register-page {
+    background: radial-gradient(circle at center, #0d0d0d 60%, #3c025d 100%);
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    padding-bottom: 20px; /* Ensure some padding at the bottom */
+}
+.subtitle{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.text-content{
+    margin-top: 60px;
+}
+.title{
+    font-size: 50px;
+    margin-top: 10px;
+}
+/* Navbar styling similar to the homepage */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 25px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin: 0 auto;
+    width: 90%;
+    max-width: 650px;
+    color: white;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 30px;
+    z-index: 1000;
+    transition: width 0.3s ease;
+}
+
+.nav-links li:hover {
+    color: #a567ff;
+}
+
+/* Form container styling */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Headings aligned to the left */
+.tagline {
+    font-size: 3.5rem;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 500px; /* Same width as input fields for alignment */
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #a567ff;
+    margin-bottom: 20px;
+}
+
+/* Input group styling */
+.input-group {
+    width: 100%;
+    max-width: 500px; /* Consistent width */
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 25px;
+    border: 1px solid #a567ff;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    caret-color: #a567ff;
+}
+
+.input-group input::placeholder {
+    color: #a567ff;
+    opacity: 0.8;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #7f46c8;
+}
+
+/* Signup button aligned with inputs */
+.signup-btn {
+    width: 60%;
+    margin-right: 50px;
+    max-width: 700px; /* Same width as input fields */
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    background-color: #a567ff;
+    color: rgb(10, 10, 10);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: bold;
+    text-align: center; /* Center the text inside the button */
+}
+
+.signup-btn:hover {
+    background-color: #7f46c8;
+}
+
+/* Robot image styling */
+.robot-image img {
+    width: 600px;
+    max-width: 100%; /* Make sure it stays responsive */
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+    margin-top: 20px;
+}
+/* Additional styles for the Forgot Password link */
+.forgot-password-link {
+    display: block;
+    margin-top: 10px;
+    color: #a567ff; /* Change color to match your theme */
+    text-align: center; /* Center the link */
+    text-decoration: underline; /* Underline the link */
+}
+
+.forgot-password-link:hover {
+    color: #7f46c8; /* Change color on hover */
+}
+.login-prompt {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: white; /* Adjust as needed */
+}
+
+.login-link {
+    color: #a567ff; /* Link color */
+    text-decoration: underline; /* Underline to indicate link */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.login-link:hover {
+    color: #7f46c8; /* Change color on hover */
+}
