@@ -8,6 +8,7 @@ import Summarizer from './components/Summarizer';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import About from './pages/About';
+import Team from './pages/Team';
 
 const App = () => {
     return (
@@ -19,6 +20,7 @@ const App = () => {
                     <Route exact path="/register" element={<Register/>}></Route>
                     <Route exact path="/login" element={<Login/>}></Route>
                     <Route exact path="/about" element={<About/>}></Route>
+                    <Route exact path="/team" element={<Team/>}></Route>
                     
 
                 </Routes>
