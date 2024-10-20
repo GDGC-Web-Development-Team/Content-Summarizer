@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 const Summarizer = () => {
     const [text, setText] = useState('');
-    const [url, setUrl] = useState('');
     const [maxLength, setMaxLength] = useState(200);
     const [summary, setSummary] = useState('');
     const [error, setError] = useState('');
@@ -18,14 +17,26 @@ const Summarizer = () => {
         setError('');
         setSummary('');
         setLoading(true);
-        setShowContent(false); 
+        setShowContent(false);
+        
+        
+        if (!text.trim()) {
+            setError('Please enter text to summarize.');
+            setLoading(false);
+            setShowContent(true);
+            return;
+        }
+
         try {
-            const response = await fetch('http://localhost:5001/api/summarize', {
+            const response = await fetch('http://localhost:5001/api/summarize', { 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ text, maxLength }),
+                body: JSON.stringify({
+                    text: text,
+                    maxLength: maxLength 
+                }),
             });
 
             if (!response.ok) {
@@ -33,37 +44,9 @@ const Summarizer = () => {
             }
 
             const data = await response.json();
-            setSummary(data.summary);
-        } catch (error) {
-            setError('Failed to summarize text');
-            console.error(error);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    const handleSummarizeUrl = async () => {
-        setError('');
-        setSummary('');
-        setLoading(true);
-        setShowContent(false);
-
-        try {
-            const response = await fetch(`http://localhost:5001/api/summarize-url?url=${encodeURIComponent(url)}`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
-
-            if (!response.ok) {
-                throw new Error('Failed to summarize URL');
-            }
-
-            const data = await response.json();
             setSummary(data.summary || 'No summary available.');
         } catch (error) {
-            setError('Failed to summarize URL');
+            setError('Failed to summarize text. Please try again.');
             console.error(error);
         } finally {
             setLoading(false);
@@ -118,23 +101,12 @@ const Summarizer = () => {
                             onChange={(e) => setText(e.target.value)}
                             rows="10"
                             cols="50"
-                            placeholder="Enter text to summarize"
+                            placeholder="Enter text/URL to summarize"
                         />
 
                         <div className="button-container"> 
                             <button className="summarizer-button" onClick={handleSummarizeText} disabled={loading}>
                                 {loading ? <div className="loader"></div> : 'Summarize Text'}
-                            </button>
-
-                            <input
-                                type="text"
-                                className="summarizer-url-input"
-                                value={url}
-                                onChange={(e) => setUrl(e.target.value)}
-                                placeholder="Enter article URL to summarize"
-                            />
-                            <button className="summarizer-button" onClick={handleSummarizeUrl} disabled={loading}>
-                                {loading ? <div className="loader"></div> : 'Summarize URL'}
                             </button>
                         </div>
 
