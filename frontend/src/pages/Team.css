@@ -1,10 +1,12 @@
-.homepage {
+.aboutpage {
     background: radial-gradient(circle at center, #0d0d0d 60%, #3c025d 100%);
     min-height: 100vh;
     color: white;
     display: flex;
     flex-direction: column;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-items: center;
+    padding-top: 50px;
 }
 
 .navbar {
@@ -53,3 +55,52 @@
 .nav-links li:hover {
     color: #a567ff;
 }
+
+.about-title {
+    font-size: 36px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.team-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 80%;
+    max-width: 1200px;
+    justify-content: center;
+}
+
+.team-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+.team-photo {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.team-role {
+    font-size: 18px;
+    color: #a567ff;
+}
+
+.team-contribution {
+    font-size: 14px;
+    color: #ddd;
+}
+
