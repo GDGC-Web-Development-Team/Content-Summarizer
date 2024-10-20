@@ -184,7 +184,7 @@ body {
     font-style: italic;
 }
 
-.stars-icon {
+.star-icon {
     color: #a567ff; /* Matching the theme color */
     font-size: 3.0rem; /* Adjust size as needed */
     transition: transform 0.2s ease-in-out;

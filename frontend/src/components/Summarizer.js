@@ -34,7 +34,7 @@ const Summarizer = () => {
                 },
                 body: JSON.stringify({
                     text: text,
-                }), // Removed maxLength here as per your request
+                }), 
             });
 
             if (!response.ok) {
@@ -59,17 +59,15 @@ const Summarizer = () => {
 
     const typeWriterEffect = (text) => {
         let index = 0;
-        setDisplayedSummary(''); // Start with an empty string to reset displayed summary
-
-        // Using setInterval for typing effect
+        setDisplayedSummary(''); 
         const interval = setInterval(() => {
             if (index < text.length) {
                 setDisplayedSummary((prev) => prev + text.charAt(index));
                 index++;
             } else {
-                clearInterval(interval); // Stop typing once done
+                clearInterval(interval); 
             }
-        }, 35); // Adjust typing speed as needed
+        }, 25); 
     };
 
     return (
@@ -90,7 +88,7 @@ const Summarizer = () => {
                         <h1 className="summarizer-title">Transform Your Text with our AI-Powered Tool using</h1>
                         <div className="log" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                             <h1>Gemini</h1>
-                            <BsStars className="stars-icon" />
+                            <BsStars className="star-icon" />
                         </div>
 
                         <textarea
