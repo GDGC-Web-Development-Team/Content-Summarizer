@@ -6,21 +6,21 @@ import { FaUserAlt } from "react-icons/fa";
 
 // Placeholder images from the internet for team members
 const teamMembers = [
-    { name: 'Lalit', role: 'Full Stack Developer', contribution: 'Backend API Integration', image: 'https://randomuser.me/api/portraits/men/1.jpg' },
-    { name: 'Amruthavalli', role: 'Web Developer', contribution: 'Team Page Design', image: 'https://randomuser.me/api/portraits/women/2.jpg' },
-    { name: 'Suryatej', role: 'Web Developer', contribution: 'Website Design', image: 'https://randomuser.me/api/portraits/men/3.jpg' },
-    { name: 'Mrigank', role: 'Web Developer', contribution: 'Backend API Integration', image: 'https://randomuser.me/api/portraits/men/4.jpg' },
-    { name: 'Shamish', role: 'Web Developer', contribution: 'Website Design', image: 'https://randomuser.me/api/portraits/men/5.jpg' },
-    { name: 'Harshith', role: 'Web Developer', contribution: 'Backend', image: 'https://randomuser.me/api/portraits/men/6.jpg' },
-    { name: 'Aashwika', role: 'UI/UX Designer', contribution: 'Login Page Design', image: 'https://randomuser.me/api/portraits/women/2.jpg' },
-    { name: 'Ritesh', role: 'UI/UX Designer', contribution: 'UI/UX Improvement', image: 'https://randomuser.me/api/portraits/men/8.jpg' },
+    { name: 'Lalit', role: 'Full Stack Developer', contribution: 'Backend API Integration', image: '' },
+    { name: 'Amruthavalli', role: 'Web Developer', contribution: 'Team Page Design', image: '' },
+    { name: 'Suryatej', role: 'Web Developer', contribution: 'Website Design', image: '' },
+    { name: 'Mrigank', role: 'Web Developer', contribution: 'Backend API Integration', image: '' },
+    { name: 'Shamish', role: 'Web Developer', contribution: 'Website Design', image: '' },
+    { name: 'Harshith', role: 'Web Developer', contribution: 'Backend', image: '' },
+    { name: 'Aashwika', role: 'UI/UX Designer', contribution: 'Login Page Design', image: '' },
+    { name: 'Ritesh', role: 'UI/UX Designer', contribution: 'UI/UX Improvement', image: '' },
 ];
 
 const Team = () => {
     return (
         <div className="aboutpage">
             <nav className="navbar">
-                <div className="logo"><h2>AIConcise</h2></div>
+                <div className="logos"><h2>AIConcise</h2></div>
                 <ul className="nav-links">
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/api">API</Link></li>

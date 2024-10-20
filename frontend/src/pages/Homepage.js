@@ -38,7 +38,7 @@ const Homepage = () => {
   return (
     <div className="homepage">
       <nav className="navbar">
-        <div className="logo"><h2>::AIConcise</h2></div>
+        <div className="logos"><h2>::AIConcise</h2></div>
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">API</Link></li>
@@ -58,12 +58,12 @@ const Homepage = () => {
           <p className="tagline">Lightning-fast.</p>
           <h1>Your AI-Powered Content Summarizer using</h1>
           <div className="logo" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <h1>Gemini API</h1>
+            <h1>Gemini</h1>
             <BsStars className="stars-icon" />
           </div>
           <p>Sum up your big essays or articles right away!</p>
           <div className="buttons">
-            <button className="start-button" onClick={handleStartCreating}>Start creating</button>
+            <button className="start-button" onClick={handleStartCreating}>Start creating ></button>
             <button className="guide-button" onClick={handleGuide}>Guide</button>
           </div>
         </div>

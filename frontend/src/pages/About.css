@@ -1,42 +1,35 @@
-.homepage {
+
+body {
     background: radial-gradient(circle at center, #0d0d0d 60%, #3c025d 100%);
     min-height: 100vh;
     color: white;
     display: flex;
     flex-direction: column;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Arial', sans-serif; 
 }
+
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 25px;
+    padding: 15px 30px; 
     border-radius: 30px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     margin: 0 auto;
     width: 90%;
-    max-width: 650px;
+    max-width: 800px; 
     color: white;
     text-decoration: none;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
     position: sticky;
-    top: 30px;
+    top: 20px;
     z-index: 1000;
     transition: width 0.3s ease;
 }
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-}
-
-.logo {
-    font-size: 20px;
-    font-weight: bold;
-}
-
+/* Navbar Links */
 .nav-links {
     display: flex;
     list-style: none;
@@ -51,56 +44,67 @@
 }
 
 .nav-links li:hover {
-    color: #a567ff;
+    color: #a567ff; /* Light hover effect */
 }
 
+/* About Content Styles */
 .about-content {
     display: flex;
+    width: 80%;
+    margin-left: 50px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 30px;
+    padding: 50px; /* More padding for better layout */
+    text-align: center; /* Center text for better appearance */
 }
 
 .about-title {
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Main title size */
     margin: 40px 0;
-    text-align: center;
     color: #ffffff;
 }
 
+/* Stepper Container Styles */
 .stepper-container {
-    width: 80%; /* Reduced width to allow more space for text */
-    padding: 25px;
+    width: 60%;
+    padding: 30px;
     border-radius: 15px;
-    margin: 20px auto; /* Auto margin to center the container */
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
 }
 
+/* Step Label and Description */
 .step-label {
-    font-size: 1.4rem;
+    font-size: 1.5rem; /* Increased label size */
     color: white;
+    font-weight: bold; /* Bold for emphasis */
 }
 
 .step-description {
-    font-size: 1.1rem;
-    margin-top: 15px;
-    line-height: 1.5;
+    font-size: 1.2rem; /* Description size */
+    margin-top: 10px; /* Adjusted margin */
+    line-height: 1.6; /* Better line height for readability */
 }
 
+/* Complete Button Styles */
 .complete-button {
-    background-color: #a567ff;
-    color: #0a0a0a;
+    background-color: #a567ff; /* Main button color */
+    color: #ffffff; /* White text */
     padding: 10px 20px;
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease; /* Added transform for hover */
 }
 
 .complete-button:hover {
-    background-color: #7f46c8;
+    background-color: #7f46c8; /* Darker shade on hover */
+    transform: scale(1.05); /* Subtle scaling effect */
 }
 
+/* Dropdown Menu */
 .dropdown {
     position: absolute;
     background-color: white;
@@ -120,40 +124,28 @@
 }
 
 .dropdown li:hover {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* Light hover effect for dropdown */
 }
 
-.about-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 30px;
-}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 2rem; /* Responsive title size */
+    }
+    
+    .stepper-container {
+        width: 90%; /* Full width on smaller screens */
+    }
+    
+    .navbar {
+        flex-direction: column; /* Stack items on smaller screens */
+    }
 
-.about-title {
-    font-size: 2.5rem;
-    margin: 40px 0;
-    text-align: center;
-    color: #ffffff;
-}
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+    }
 
-.stepper-container {
-    width: 80%; /* Updated width for more text visibility */
-    padding: 25px;
-    border-radius: 15px;
-    margin: 20px auto;
-    background-color: transparent; /* Removed background for transparent effect */
-    box-shadow: none; /* No shadow to keep the transparent effect */
-}
-
-.step-label {
-    font-size: 1.4rem;
-    color: white;
-}
-
-.step-description {
-    font-size: 1.1rem;
-    margin-top: 15px;
-    line-height: 1.5;
+    .nav-links li {
+        margin: 10px 0; /* Space out links */
+    }
 }

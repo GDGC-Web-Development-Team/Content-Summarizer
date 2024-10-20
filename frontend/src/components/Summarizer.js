@@ -19,7 +19,6 @@ const Summarizer = () => {
         setLoading(true);
         setShowContent(false);
         
-        
         if (!text.trim()) {
             setError('Please enter text to summarize.');
             setLoading(false);
@@ -35,8 +34,7 @@ const Summarizer = () => {
                 },
                 body: JSON.stringify({
                     text: text,
-                    maxLength: maxLength 
-                }),
+                }), // Removed maxLength here as per your request
             });
 
             if (!response.ok) {
@@ -61,23 +59,23 @@ const Summarizer = () => {
 
     const typeWriterEffect = (text) => {
         let index = 0;
-        setDisplayedSummary('');
+        setDisplayedSummary(''); // Start with an empty string to reset displayed summary
 
-        const type = () => {
+        // Using setInterval for typing effect
+        const interval = setInterval(() => {
             if (index < text.length) {
                 setDisplayedSummary((prev) => prev + text.charAt(index));
                 index++;
-                setTimeout(type, 50);
+            } else {
+                clearInterval(interval); // Stop typing once done
             }
-        };
-
-        type();
+        }, 35); // Adjust typing speed as needed
     };
 
     return (
         <div className="summarizer">
             <nav className="navbar">
-                <div className="logo"><h2>::AIConcise</h2></div>
+                <div className="logos"><h2>::AIConcise</h2></div>
                 <ul className="nav-links">
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">API</Link></li>
@@ -90,8 +88,8 @@ const Summarizer = () => {
                 {showContent && (
                     <div className="text-content">
                         <h1 className="summarizer-title">Transform Your Text with our AI-Powered Tool using</h1>
-                        <div className="logo" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                            <h1>Gemini API</h1>
+                        <div className="log" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                            <h1>Gemini</h1>
                             <BsStars className="stars-icon" />
                         </div>
 
@@ -106,7 +104,7 @@ const Summarizer = () => {
 
                         <div className="button-container"> 
                             <button className="summarizer-button" onClick={handleSummarizeText} disabled={loading}>
-                                {loading ? <div className="loader"></div> : 'Summarize Text'}
+                                {loading ? <div className="loader"></div> : 'Summarize'}
                             </button>
                         </div>
 
@@ -116,8 +114,12 @@ const Summarizer = () => {
 
                 {!showContent && loading && (
                     <div className="loader-container">
+                        <div className="log" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                            <h1>Gemini</h1>
+                            <BsStars className="stars-icon" />
+                        </div>
                         <div className="loader"></div>
-                        <p className="loading-text">Your summary is being generated...</p>
+                        
                     </div>
                 )}
 
