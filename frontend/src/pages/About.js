@@ -1,28 +1,26 @@
-import React, { useState } from 'react';
-import '../pages/About.css';
-import Box from '@mui/material/Box';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepButton from '@mui/material/StepButton';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { Link, useNavigate } from 'react-router-dom';
-import { BsStars } from "react-icons/bs";
+import React, { useState } from "react";
+import "../pages/About.css";
+import Box from "@mui/material/Box";
+import Stepper from "@mui/material/Stepper";
+import Step from "@mui/material/Step";
+import StepButton from "@mui/material/StepButton";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import { Link, useNavigate } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
-import ban from '../images/WhatsApp_Image_2024-10-18_at_20.51.05-removebg-preview.png';
 
 const steps = [
-  'Input Text',
-  'Connect to AI Model',
-  'Generate Summary',
-  'Deliver Output',
+  "Input Text",
+  "Connect to AI Model",
+  "Generate Summary",
+  "Deliver Output",
 ];
 
 const stepsDetails = [
   "Users provide large blocks of text, typically between 1000 to 1500 characters. This input can come from various sources such as articles, reports, or personal notes.",
   "The input text and the specified summary length are sent to the Hugging Face Text Summarizer API. This involves constructing a well-defined API call.",
   "The AI processes the input text using advanced NLP techniques to distill the information into a coherent summary.",
-  "Once generated, the summary is returned to the user in a user-friendly format, allowing easy reading, copying, or editing."
+  "Once generated, the summary is returned to the user in a user-friendly format, allowing easy reading, copying, or editing.",
 ];
 
 const CustomizedSteppers = () => {
@@ -35,9 +33,10 @@ const CustomizedSteppers = () => {
   const allStepsCompleted = () => completedSteps() === totalSteps();
 
   const handleNext = () => {
-    const newActiveStep = isLastStep() && !allStepsCompleted()
-      ? steps.findIndex((_step, i) => !(i in completed))
-      : activeStep + 1;
+    const newActiveStep =
+      isLastStep() && !allStepsCompleted()
+        ? steps.findIndex((_step, i) => !(i in completed))
+        : activeStep + 1;
     setActiveStep(newActiveStep);
   };
 
@@ -51,39 +50,47 @@ const CustomizedSteppers = () => {
   };
 
   return (
-    <Box className='stepper-container' sx={{ width: '100%', color: 'white' }}>
-      <Stepper nonLinear activeStep={activeStep} sx={{ color: 'white' }}>
+    <Box className="stepper-container" sx={{ width: "100%", color: "white" }}>
+      <Stepper nonLinear activeStep={activeStep} sx={{ color: "white" }}>
         {steps.map((label, index) => (
-          <Step key={label} sx={{ color: "purple" }} completed={completed[index]}>
-            <StepButton className='step-button' onClick={handleStep(index)}>
-              <p className='step-label'>{label}</p>
+          <Step
+            key={label}
+            sx={{ color: "purple" }}
+            completed={completed[index]}
+          >
+            <StepButton className="step-button" onClick={handleStep(index)}>
+              <p className="step-label">{label}</p>
             </StepButton>
           </Step>
         ))}
       </Stepper>
-      <div className='step-details'>
+      <div className="step-details">
         {allStepsCompleted() ? (
           <React.Fragment>
-            <Typography sx={{ color: 'white', textAlign: 'center', mt: 2 }}>
+            <Typography sx={{ color: "white", textAlign: "center", mt: 2 }}>
               All steps completed!
             </Typography>
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <Typography sx={{ mt: 2, mb: 1, py: 1, color: 'white', textAlign: 'center' }}>
-              <p className='step-description'>
-                {stepsDetails[activeStep]}
-              </p>
+            <Typography
+              sx={{ mt: 2, mb: 1, py: 1, color: "white", textAlign: "center" }}
+            >
+              <p className="step-description">{stepsDetails[activeStep]}</p>
             </Typography>
-            {activeStep !== steps.length && (completed[activeStep] ? (
-              <Typography variant="caption" sx={{ display: 'inline-block', color: 'white' }}>
-                Step {activeStep + 1} already completed
-              </Typography>
-            ) : (
-              <Button className='complete-button' onClick={handleComplete}>
-                Complete
-              </Button>
-            ))}
+            {activeStep !== steps.length &&
+              (completed[activeStep] ? (
+                <Typography
+                  variant="caption"
+                  sx={{ display: "inline-block", color: "white" }}
+                >
+                  Step {activeStep + 1} already completed
+                </Typography>
+              ) : (
+                <Button className="complete-button" onClick={handleComplete}>
+                  Complete
+                </Button>
+              ))}
           </React.Fragment>
         )}
       </div>
@@ -100,34 +107,37 @@ const About = () => {
     if (isLoggedIn) {
       setShowDropdown(!showDropdown);
     } else {
-      navigate('/register');
+      navigate("/register");
     }
   };
 
   const handleLogout = () => {
     setIsLoggedIn(false);
     setShowDropdown(false);
-    navigate('/');
-  };
-
-  const handleStartCreating = () => {
-    navigate('/concise');
-  };
-
-  const handleGuide = () => {
-    navigate('/about');
+    navigate("/");
   };
 
   return (
     <div className="homepage">
       <nav className="navbar">
-        <div className="logos"><h2>::AIConcise</h2></div>
+        <div className="logos">
+          <h2>::AIConcise</h2>
+        </div>
         <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">API</Link></li>
-          <li><Link to="/team">Team</Link></li>
           <li>
-            <FaUserAlt onClick={handleUserIconClick} style={{ cursor: 'pointer' }} />
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">API</Link>
+          </li>
+          <li>
+            <Link to="/team">Team</Link>
+          </li>
+          <li>
+            <FaUserAlt
+              onClick={handleUserIconClick}
+              style={{ cursor: "pointer" }}
+            />
             {showDropdown && isLoggedIn && (
               <ul className="dropdown">
                 <li onClick={handleLogout}>Logout</li>

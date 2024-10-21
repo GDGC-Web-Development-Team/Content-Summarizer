@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 const Summarizer = () => {
   const [text, setText] = useState("");
-  const [maxLength, setMaxLength] = useState(200);
   const [summary, setSummary] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
